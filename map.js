@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Create the map
-  var map = L.map('map').setView([67.1124705, 24.9337997], 4.5);
+  var map = L.map('map').setView([24.9337997, 67.1124705], 4.5);
 
   // Add the tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -20,7 +20,7 @@ $(document).ready(function() {
       console.log("Latitude:", latitude, "Longitude:", longitude);
 
       if (!isNaN(latitude) && !isNaN(longitude)) {
-        var marker = L.marker([latitude, longitude]).addTo(map);
+        var marker = L.marker([longitude, latitude]).addTo(map);
         var popupContent = "<strong>Range of Net Magnetic Field:</strong><br>" + minNetField + " - " + maxNetField;
         // Show popup on mouseover
         marker.on('mouseover', function(e) {
